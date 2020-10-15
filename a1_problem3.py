@@ -1,6 +1,6 @@
 # Course: CS261 - Data Structures
-# Student Name:
-# Assignment:
+# Student Name: Ryan Farol
+# Assignment: Assignment 1 Problem 3
 # Description:
 
 
@@ -8,10 +8,10 @@ from a1_include import *
 
 
 def reverse(arr: StaticArray) -> None:
-    """
-    TODO: Write this implementation
-    """
-    return
+    if arr.size() == 1:
+        return arr
+    else:
+        return arr[(arr.size())-1]
 
 
 # BASIC TESTING
