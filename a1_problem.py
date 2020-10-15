@@ -1,7 +1,7 @@
 # Course: CS261 - Data Structures
 # Student Name: Ryan Farol
 # Assignment: Assignment 1 Problem 1
-# Description:
+# Description: Function takes the static array and finds the min and max integers.
 
 
 from a1_include import *
