@@ -22,6 +22,13 @@ def sa_range(start: int, end: int) -> StaticArray:
             fb_arr[i] = -value # adds a negative value to the array
         return fb_arr
 
+    elif end < start and end > 0:  # checks if the end range is larger than the start range
+        empty = [_ for _ in range(abs(start), abs(end)-1, -1)]  # create empty static array and use range to determine length. Reverses the numbers
+        fb_arr = StaticArray(len(empty))  # call static array class to make new array
+        for i, value in enumerate(empty):  # enumerate list and give it values
+            fb_arr[i] = value  # adds a negative value to the array
+        return fb_arr
+
     else:
         empty = [_ for _ in range(start, abs(end)+1)]  # create empty static array and range for the size of the array
         fb_arr = StaticArray(len(empty))  # call static array class to make new array
