@@ -39,7 +39,6 @@ def is_sorted(arr: StaticArray) -> int:
 
 
 
-
 # BASIC TESTING
 if __name__ == "__main__":
 
