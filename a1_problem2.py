@@ -10,10 +10,7 @@ from a1_include import *
 
 def fizz_buzz(arr: StaticArray) -> StaticArray:
     """create new array and checks for numbers divisible by 3, 5, or both. Replaces it with fizz, buzz, or fizzbuzz"""
-    empty = [_ for _ in range(arr.size())] # create empty static array and use size of current array as length
-    fb_arr = StaticArray(len(empty)) # call static array class to make new array
-    for i, value in enumerate(empty): # enumerate list and give it values
-        fb_arr[i] = value
+    fb_arr = StaticArray(arr.size()) # call static array class to make new array
     for i in range(arr.size()): # iterate through current array and copy the contents over
         fb_arr[i] = arr[i]
     for index in range(fb_arr.size()): # iterate through new array and check for divisibility
