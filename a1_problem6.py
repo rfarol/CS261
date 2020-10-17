@@ -11,6 +11,8 @@ def is_sorted(arr: StaticArray) -> int:
     if arr.size() == 1:
         return 1
     for index in range(arr.size() - 1): # iterate through array
+        if arr[index] == arr[index + 1]:
+            return 0
         if arr[index] < arr[index + 1]:
             wrong = 0
             place = 1
@@ -52,7 +54,8 @@ if __name__ == "__main__":
         [-10, 0, 0, 10, 20, 30],
         [100, 90, 0, -90, -200],
         ['apple'],
-        [1, 3]
+        [1, 3],
+        [0, 0]
     )
     for case in test_cases:
         arr = StaticArray(len(case))
