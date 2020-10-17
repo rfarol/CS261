@@ -12,23 +12,23 @@ def is_sorted(arr: StaticArray) -> int:
         return 1
     for index in range(arr.size() - 1): # iterate through array
         if arr[index] < arr[index + 1]:
-            flag = 0
-            i = 1
-            while i < arr.size():
-                if arr[i] <= arr[i-1]:
-                    flag = 1
-                i += 1
-            if not flag:
+            wrong = 0
+            place = 1
+            while place < arr.size():
+                if arr[place] <= arr[place-1]:
+                    wrong = 1
+                place += 1
+            if not wrong:
                 return 1
             else:
                 return 0
         if arr[index] > arr[index + 1]:
             flag = 0
-            i = 1
-            while i < arr.size():
-                if arr[i] >= arr[i - 1]:
+            place = 1
+            while place < arr.size():
+                if arr[place] >= arr[place - 1]:
                     flag = 1
-                i += 1
+                place += 1
             if not flag:
                 return 2
             else:
