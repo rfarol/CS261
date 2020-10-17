@@ -1,38 +1,39 @@
 # Course: CS261 - Data Structures
-# Student Name:
-# Assignment:
-# Description:
+# Student Name: Ryan Farol
+# Assignment: Assignment 1 Problem 6
+# Description: Takes a static array and checks if array is in ascending or descending order. Return 1 for ascending,
+# return 2 for descending, and return 0 if neither.
 
 
 from a1_include import *
 
 
 def is_sorted(arr: StaticArray) -> int:
-    if arr.size() == 1:
+    if arr.size() == 1: # if array has one element. Return 1
         return 1
     for index in range(arr.size() - 1): # iterate through array
-        if arr[index] == arr[index + 1]:
+        if arr[index] == arr[index + 1]: # if array only has two elements and they both equal each other, return 0
             return 0
-        if arr[index] < arr[index + 1]:
-            wrong = 0
-            place = 1
+        if arr[index] < arr[index + 1]: # checks if array is in ascending order
+            wrong = 0 # wrong flag is initialized
+            place = 1 # initialize the second index
             while place < arr.size():
-                if arr[place] <= arr[place-1]:
+                if arr[place] <= arr[place-1]: # if the previous index is smaller, the wrong flag is triggered
                     wrong = 1
-                place += 1
+                place += 1 # if not, keep moving forward
             if not wrong:
-                return 1
+                return 1 # if not triggered, return 1
             else:
-                return 0
-        if arr[index] > arr[index + 1]:
-            flag = 0
-            place = 1
+                return 0 # if triggered, return 0
+        if arr[index] > arr[index + 1]: # checks for descending order
+            wrong = 0 # wrong flag is set as 0
+            place = 1 # initialize the second index
             while place < arr.size():
-                if arr[place] >= arr[place - 1]:
-                    flag = 1
-                place += 1
-            if not flag:
-                return 2
+                if arr[place] >= arr[place - 1]: # if the previous index is bigger, the wrong flag is triggered
+                    wrong = 1
+                place += 1 # if not, keep moving forward
+            if not wrong:
+                return 2 # if not triggered, return 2
             else:
                 return 0
 
