@@ -1,17 +1,21 @@
 # Course: CS261 - Data Structures
-# Student Name:
-# Assignment:
-# Description:
+# Student Name: Ryan Farol
+# Assignment: Assignment 1 Problem 7
+# Description: Sorts array in ascending order
 
 
 from a1_include import *
 
 
 def sa_sort(arr: StaticArray) -> None:
-    """
-    TODO: Write this implementation
-    """
+    for index in range(arr.size()): # iterate through array
+        for index_2 in range(index + 1, arr.size()): # nested loop to check iteration. increment by 1
+            if arr[index] > arr[index_2]: # checks current index is larger than the next increment
+                temp = arr[index] # stores current index value in variable
+                arr[index] = arr[index_2] # next increment takes over current index value
+                arr[index_2] = temp # current index value moves forward along the array
     return
+
 
 
 # BASIC TESTING
