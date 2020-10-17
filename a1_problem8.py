@@ -1,17 +1,26 @@
 # Course: CS261 - Data Structures
-# Student Name:
-# Assignment:
-# Description:
+# Student Name: Ryan Farol
+# Assignment: Assignment 1 Problem 8
+# Description: Takes the static array and removes the duplicates into a new array
 
 
 from a1_include import *
 
 
 def remove_duplicates(arr: StaticArray) -> StaticArray:
-    """
-    TODO: Write this implementation
-    """
-    return StaticArray()
+    fb_arr = StaticArray(arr.size()) # create new array
+    counter = 0 # initialize it index at 0
+    for i in range(0, arr.size()-1): # iterate all the elements on the current list
+        if arr[i] != arr[i+1]: # if number is unique, store the elemnt into new array
+            fb_arr[counter] = arr[i]
+            counter += 1 # move counter
+    fb_arr[counter] = arr[arr.size() - 1] # adds the last number onto the array
+    counter += 1
+    return fb_arr
+
+# couldn't figure out how to adjust the array size for the new static array
+
+
 
 
 # BASIC TESTING
